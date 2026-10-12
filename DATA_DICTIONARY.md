@@ -20,8 +20,8 @@ Tags: **Use** = needed for the analysis, **Maybe** = might use later, **Ignore**
 - `impressions` [Use]: the number of viewers randomly assigned to this package. A test's total participants is the sum of impressions over all packages with the same `clickability_test_id`.
 - `clicks` [Use]: the number of those viewers who clicked on the package. Click rate = clicks / impressions.
 - `significance` [Ignore]: shown to editors to guide decisions. It is not a statistical significance result, and I don't know its method.
-- `first_place` [Ignore]: shown to editors, along with `significance`, to guide which package to choose.
-- `winner` [Ignore]: whether editors selected the package for the Upworthy site after the test. This is an editor decision, not a statistical result. Our own selected package will be named something else.
+- `first_place` [Maybe]: shown to editors, along with `significance`, to guide which package to choose.
+- `winner` [Maybe]: whether editors selected the package for the Upworthy site after the test. This is an editor decision, not a statistical result. Our own selected package will be named something else.
 - `share_text` [Ignore]: a summary for display on social media when the article is shared. It was not shown in tests, which ran on the Upworthy website.
 - `square` [Ignore]: when used, part of the same social media sharing suggestion as `share_text`.
 - `test_week` [Use]: the week the package was created, a variable built by the archive creators for stratified random sampling. Useful for time coverage.
