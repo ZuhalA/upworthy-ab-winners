@@ -18,3 +18,7 @@ Note: an earlier count gave 18,411 clean packages, 23 more than above. Its still
 
 
 
+
+
+Note: Flag uses UTC and as a result using a different time zone would move a handful of tests at the window edges.
+
