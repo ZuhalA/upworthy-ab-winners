@@ -22,3 +22,16 @@ Note: an earlier count gave 18,411 clean packages, 23 more than above. Its still
 
 Note: Flag uses UTC and as a result using a different time zone would move a handful of tests at the window edges.
 
+## EDA Tentative goal
+- Check packages per tests
+    - check whether tests have the same number of packages
+
+- Impressions per package
+    - check sample sizes, small sample --> noisy click rates 
+- click rate per package distribution
+- impression balance within tests
+    -  to make sure the impressions were shown about equally often
+- audit memo: any data quality concerns there I encounter?
+
+* we only do it with 'problem' == 0 since those are the ones used 
+
