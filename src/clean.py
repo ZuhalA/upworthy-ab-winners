@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 import pandas as pd
 
@@ -50,8 +51,8 @@ def summarize(df, label):
     n_tests = df["clickability_test_id"].nunique()
     print(f"{label}: {len(df):,} packages, {n_tests:,} tests")
 
-def main():
-    df = load_raw(RAW_PATH)
+def main(raw_path = RAW_PATH, out_path = OUT_PATH):
+    df = load_raw(raw_path)
     summarize(df, "raw")
     
     df = parse_dates(df)
@@ -63,9 +64,13 @@ def main():
     summarize(df[df["problem"] == 1], "flagged (problem=1)")
     summarize(df[df["problem"] == 0], "kept (problem=0)")
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(OUT_PATH, index=False)
-    print(f"wrote {OUT_PATH}")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(out_path, index=False)
+    print(f"wrote {out_path}")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Clean an Upworthy packages file.")
+    parser.add_argument("--raw", type=Path, default=RAW_PATH, help="input CSV")
+    parser.add_argument("--out", type=Path, default=OUT_PATH, help="output CSV")
+    args = parser.parse_args()
+    main(args.raw, args.out)
