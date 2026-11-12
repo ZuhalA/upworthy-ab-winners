@@ -1,4 +1,3 @@
-# Upworthy: Are A/B test winners in Upworthy really winners?
 # Are A/B test winners really winners?
 
 Kind of. About half of a winner's lead is luck.
